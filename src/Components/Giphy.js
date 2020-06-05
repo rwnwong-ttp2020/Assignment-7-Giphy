@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios"
 import Search from './Search'
+import Trending from './Trending'
 
 
 class Giphy extends Component {
@@ -21,7 +22,7 @@ class Giphy extends Component {
     handleSearch = () => {
         const searchInput = this.state.searchInput;
         const API_Key = process.env.REACT_APP_APIKEY;
-        const url = `http://api.giphy.com/v1/gifs/search?q=${searchInput}&api_key=${API_Key}`;
+        const url = `http://api.giphy.com/v1/gifs/search?q=${searchInput}&api_key=${API_Key}&limit=10`;
 
         axios.get(url, {params:{key: API_Key}})
         .then((response)=>{
@@ -40,7 +41,7 @@ class Giphy extends Component {
     render() {
         let gifList;
         if(this.state.gifs.length===0){
-            gifList = <></>;
+            gifList=<Trending/>
         }else{
             gifList = (
                 <div>
