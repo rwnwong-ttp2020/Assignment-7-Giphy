@@ -43,11 +43,14 @@ class Giphy extends Component {
             gifList = <></>;
         }else{
             gifList = (
-                <ul>
+                <div>
                     {this.state.gifs.map((gif, index)=>{
-                        return <li key = {index}>{gif.url}</li>;
+                        return (<video key = {index} loop autoPlay>
+                            <source src={gif.images.looping.mp4} alt= "gifImage"
+                            width={250} height = {250} />
+                            </video>);
                     })}
-                </ul>
+                </div>
             );
         }
 
