@@ -64,7 +64,7 @@ class Giphy extends Component {
                     onSearch = {this.handleSearch}
                 />
                 <h3>{this.state.result}</h3>
-                {gifList}
+                <>{gifList}</>
             </div>
         );
     }
