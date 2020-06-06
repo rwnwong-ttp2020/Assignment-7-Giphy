@@ -47,7 +47,6 @@ class Random extends Component {
               height={250}
             />
           </video> }
-          ); })}
         </>
       );
     }
