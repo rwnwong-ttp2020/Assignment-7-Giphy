@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from "axios"
 import Search from './Search'
 import Trending from './Trending'
+import Random from './Random'
 
 
 class Giphy extends Component {
@@ -63,6 +64,7 @@ class Giphy extends Component {
                     onChange = {this.handleInput}
                     onSearch = {this.handleSearch}
                 />
+                <Random />
                 <h3>{this.state.result}</h3>
                 <>{gifList}</>
             </div>

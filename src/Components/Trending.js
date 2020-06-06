@@ -46,7 +46,7 @@ class Trending extends Component {
             )
         }
         return (
-            <div class = "trending">
+            <div className = "trending">
                 <h1>Trending</h1>
                 {trendsListing}
             </div>
