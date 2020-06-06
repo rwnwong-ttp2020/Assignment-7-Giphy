@@ -37,6 +37,8 @@ class Giphy extends Component {
             this.setState({gifs:[]});
         });
     };
+
+    
     
     
     render() {
@@ -64,7 +66,7 @@ class Giphy extends Component {
                     onChange = {this.handleInput}
                     onSearch = {this.handleSearch}
                 />
-                <Random />
+                <Random onChange = {this.handleSearch}/>
                 <h3>{this.state.result}</h3>
                 <>{gifList}</>
             </div>
