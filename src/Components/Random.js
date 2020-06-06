@@ -6,7 +6,7 @@ class Random extends Component {
     super(props);
 
     this.state = {
-      rand: null,
+      rand: "",
     };
     this.handleRandom = this.handleRandom.bind(this);
   }
@@ -21,10 +21,10 @@ class Random extends Component {
         const data = response.data;
         const random = data.data;
         console.log(random);
-        const randomObj = {
-          imageUrl: random.images.looping.mp4,
-        };
-        this.setState({ rand: randomObj });
+        // const randomObj = {
+        //   imageUrl: random.images.looping.mp4,
+        // };
+        this.setState({ rand: random.images.looping.mp4 });
       })
       .catch((err) => {
         console.log(err);
@@ -41,7 +41,7 @@ class Random extends Component {
         {console.log("in render", this.state)}
           {<video id="random gif" loop autoPlay>
             <source
-              src={this.state.rand.imageUrl}
+              src={this.state.rand}
               alt="gifImage"
               width={250}
               height={250}
@@ -54,6 +54,7 @@ class Random extends Component {
     return (
       <div>
         <button onClick={this.handleRandom}>Random</button>
+        <br></br>
         {randGif}
       </div>
     );
