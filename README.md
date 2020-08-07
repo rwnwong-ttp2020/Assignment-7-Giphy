@@ -1,3 +1,7 @@
+Gifs are coool man :pray:
+
+![gintama](https://media.giphy.com/media/kdM3zfq85XSb6/giphy.gif)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
