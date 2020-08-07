@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import './style.css';
 
 class Random extends Component {
   constructor(props) {
@@ -52,7 +53,7 @@ class Random extends Component {
     }
     return (
       <div>
-        <button onClick={this.handleRandom}>Random</button>
+        <button className="randbtn" onClick={this.handleRandom}>Random</button>
         <br></br>
         {randGif}
       </div>

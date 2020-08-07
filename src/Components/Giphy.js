@@ -3,6 +3,7 @@ import axios from "axios"
 import Search from './Search'
 import Trending from './Trending'
 import Random from './Random'
+import './style.css'
 
 
 class Giphy extends Component {
@@ -23,7 +24,7 @@ class Giphy extends Component {
     handleSearch = () => {
         const searchInput = this.state.searchInput;
         const API_Key = process.env.REACT_APP_APIKEY;
-        const url = `http://api.giphy.com/v1/gifs/search?q=${searchInput}&api_key=${API_Key}&limit=10`;
+        const url = `http://api.giphy.com/v1/gifs/search?q=${searchInput}&api_key=${API_Key}&limit=16`;
 
         axios.get(url, {params:{key: API_Key}})
         .then((response)=>{
@@ -47,7 +48,7 @@ class Giphy extends Component {
             gifList=<Trending/>
         }else{
             gifList = (
-                <div>
+                <div className= "gif-list">
                     {this.state.gifs.map((gif, index)=>{
                         return (<video key = {index} loop autoPlay>
                             <source src={gif.images.looping.mp4} alt= "gifImage"
@@ -60,14 +61,12 @@ class Giphy extends Component {
 
         return(
             <div className = "giphy">
-                <h1>Gif Search</h1>
                 <Search 
                     value = {this.state.searchInput}
                     onChange = {this.handleInput}
                     onSearch = {this.handleSearch}
                 />
                 <Random onChange = {this.handleSearch}/>
-                <h3>{this.state.result}</h3>
                 <>{gifList}</>
             </div>
         );

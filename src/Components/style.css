@@ -1,0 +1,32 @@
+.giphy {
+    background: lavender;
+    text-align: center;
+}
+
+.gif-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    width: 150px;
+}
+
+.search > button {
+    border-radius: 2rem;
+}
+
+
+.randbtn {
+    border-radius: 2rem;
+}
+
+
+

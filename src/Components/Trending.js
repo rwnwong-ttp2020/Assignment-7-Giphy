@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import './style.css'
 
 class Trending extends Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class Trending extends Component {
 
     componentDidMount(){
         const API_Key = process.env.REACT_APP_APIKEY;
-        const url = `http://api.giphy.com/v1/gifs/trending?api_key=${API_Key}&limit=10`;
+        const url = `http://api.giphy.com/v1/gifs/trending?api_key=${API_Key}&limit=16`;
         
         axios.get(url, {params:{key: API_Key}})
         .then((response)=>{
@@ -35,19 +36,18 @@ class Trending extends Component {
         }
         else {
             trendsListing = (
-                <>
+                <div className= "gif-list">
                     {this.state.trending.map((trend, index)=>{
                         return (<video key = {index} loop autoPlay>
-                            <source src={trend.images.looping.mp4} alt= "gifImage"
+                            <source src={trend.images.original_mp4.mp4} alt= "gifImage"
                             width={250} height = {250} />
                             </video>);
                     })}
-                </>
+                </div>
             )
         }
         return (
-            <div className = "trending">
-                <h1>Trending</h1>
+            <div>
                 {trendsListing}
             </div>
         )
